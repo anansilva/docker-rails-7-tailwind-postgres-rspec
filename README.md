@@ -41,16 +41,17 @@ test:
   database: myapp_test
 ```
 
-Install webpacker:
-
-```shell
-docker-compose run web rails webpacker:install
-```
-
 Create the database:
 
 ```shell
 docker-compose run web rake db:create
+```
+
+Install Tailwind CSS:
+
+```shell
+docker-compose run web bundle add tailwindcss-rails
+docker-compose run web rails tailwindcss:install
 ```
 
 And, finally, you can boot the app:
