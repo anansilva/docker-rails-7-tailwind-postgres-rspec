@@ -59,7 +59,7 @@ To install rspec, add the 'rspec-rails' gem to your Gemfile:
 ```shell
 group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
-  end
+end
 ```
 
 Followed by the install commands:
