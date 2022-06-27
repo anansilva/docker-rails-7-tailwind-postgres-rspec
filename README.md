@@ -40,6 +40,16 @@ docker-compose run web rake db:create
 
 ## Install rspec
 
+To install rspec, add the 'rspec-rails' gem to your Gemfile:
+
+```shell
+group :development, :test do
+  gem 'rspec-rails', '~> 5.0.0'
+end
+```
+
+Followed by the install commands:
+
 ```shell
 docker-compose run web rails generate rspec:install
 ```
