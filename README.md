@@ -1,14 +1,15 @@
 # Rails 7 docker template with postgres and rspec
 
-## Ruby 3
-## Rails 7
-### Postgresql
-### Redis
-### Rspec
-### Sidekiq
-### Rubocop
-### Brakeman
-## Tailwindcss
+## Includes
+- Ruby 3
+- Rails 7
+  - Postgresql
+  - Redis
+  - Sidekiq
+  - Rspec
+  - Rubocop
+  - Brakeman
+  - Tailwindcss
 
 ## Generate new rails app
 
@@ -40,17 +41,10 @@ docker-compose run web rake db:create
 
 ## Install rspec
 
-To install rspec, add the 'rspec-rails' gem to your Gemfile:
-
-```shell
-group :development, :test do
-  gem 'rspec-rails', '~> 5.0.0'
-end
-```
-
 Followed by the install commands:
 
 ```shell
+docker-compose run web bundle add rspec-rails --version "~> 5.0.0" --group "development, test"
 docker-compose run web rails generate rspec:install
 ```
 
@@ -77,10 +71,31 @@ docker-compose run web rails tailwindcss:install
 
 ## Setup sidekiq
 
+```shell
+docker-compose run web bundle add sidekiq
+```
+
+```shell
+mkdir config/initializers
+cp config/initializers/sidekiq.rb.sample config/initializers/sidekiq.rb
+```
+
 Add this line to `config/application.rb`
 
 ```shell
-  config.active_job.queue_adapter = :sidekiq
+config.active_job.queue_adapter = :sidekiq
+```
+
+## Install rubocop
+
+```shell
+docker-compose run web bundle rubocop
+```
+
+## Install brakeman
+
+```shell
+docker-compose run web bundle brakeman --group "development"
 ```
 
 ## Boot the app
