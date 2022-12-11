@@ -89,7 +89,7 @@ config.active_job.queue_adapter = :sidekiq
 ## Install rubocop
 
 ```shell
-docker-compose run web bundle rubocop
+docker-compose run web bundle add rubocop
 ```
 
 ## Install brakeman
