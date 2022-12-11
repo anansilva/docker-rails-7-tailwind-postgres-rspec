@@ -95,7 +95,7 @@ docker-compose run web bundle add rubocop
 ## Install brakeman
 
 ```shell
-docker-compose run web bundle brakeman --group "development"
+docker-compose run web bundle add brakeman --group "development"
 ```
 
 ## Boot the app
