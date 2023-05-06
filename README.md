@@ -44,7 +44,7 @@ docker-compose run web rake db:create
 Followed by the install commands:
 
 ```shell
-docker-compose run web bundle add rspec-rails --version "~> 5.0.0" --group "development, test"
+docker-compose run web bundle add rspec-rails --version "~> 6.0.0" --group "development, test"
 docker-compose run web rails generate rspec:install
 ```
 
