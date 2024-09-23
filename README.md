@@ -77,7 +77,7 @@ docker-compose run web bundle add sidekiq
 
 ```shell
 mkdir config/initializers
-cp config/initializers/sidekiq.rb.sample config/initializers/sidekiq.rb
+cp config/sidekiq.rb.sample config/initializers/sidekiq.rb
 ```
 
 Add this line to `config/application.rb`
